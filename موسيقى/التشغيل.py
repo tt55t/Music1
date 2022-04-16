@@ -164,7 +164,7 @@ async def play(client, m: Message):
                         except Exception as ep:
                             await huehue.edit(f"`{ep}`")
 
-@Client.on_message(    filters.user(SUDO_USERS) & filters.command(["تشغيل_فيديو"], prefixes=f"{HNDLR}"))
+@Client.on_message(    filters.user(SUDO_USERS) & filters.command(["فيد"], prefixes=f"{HNDLR}"))
 @authorized_users_only
 async def vplay(client, m: Message):
     replied = m.reply_to_message
@@ -219,7 +219,7 @@ async def vplay(client, m: Message):
                 await huehue.delete()
                 # await m.reply_to_message.delete()
                 await m.reply_photo(
-                    photo="https://telegra.ph/file/40c0ab31719a780e37b5c.jpg",
+                    photo="https://telegra.ph/file/65f9b2fb1dfd7be0ecf3e.jpg",
                     caption=f"""
 **🏷️ العنوان : [{songname}]({link})
 💬 ايدي المحادثه : {chat_id}
@@ -305,7 +305,7 @@ async def playfrom(client, m: Message):
                     await call_py.join_group_call(                        chat_id,                        AudioPiped(location),                        stream_type=StreamType().pulse_stream,                    )
                     add_to_queue(chat_id, songname, location, link, "Audio", 0)
                     await m.reply_photo(
-                        photo="https://telegra.ph/file/40c0ab31719a780e37b5c.jpg",
+                        photo="https://telegra.ph/file/65f9b2fb1dfd7be0ecf3e.jpg",
                         caption=f"""
 **▶ ابدأ تشغيل الأغاني من {chat}
 🏷️ العنوان : [{songname}]({link})
@@ -367,7 +367,7 @@ async def skip(client, m: Message):
                         OP = OP + "\n" + f"**#⃣{x}** - {hm}"
             await m.reply(OP)
 
-@Client.on_message(    filters.user(SUDO_USERS) & filters.command(["انهاء", "ايقاف"], prefixes=f"{HNDLR}"))
+@Client.on_message(    filters.user(SUDO_USERS) & filters.command(["انهاء", "ق"], prefixes=f"{HNDLR}"))
 @authorized_users_only
 async def stop(client, m: Message):
     await m.delete()
